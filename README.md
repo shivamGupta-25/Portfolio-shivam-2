@@ -2,7 +2,7 @@
 
 Personal portfolio website built with **Next.js**, **Tailwind CSS**, **Shadcn UI**, and **Magic UI**. Deployed on Vercel.
 
-🔗 **Live:** [shivam-gupta25.vercel.app](https://shivam-gupta25.vercel.app/)
+🔗 **Live:** [shivamgupta-25.vercel.app/](https://shivamgupta-25.vercel.app/)
 
 ## Stack
 

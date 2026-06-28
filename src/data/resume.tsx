@@ -36,7 +36,7 @@ export const SHOW_WORK_BY_CATEGORY = true;
 export const DATA = {
   name: "Shivam Raj Gupta",
   initials: "SG",
-  url: "https://shivam-gupta25.vercel.app/",
+  url: "https://shivamgupta-25.vercel.app/",
   location: "New Delhi, India",
   description: "At the Intersection of Data Science, Machine Learning, Optimization, & Data Analytics to drive Better Decisions.",
   summary: `I'm a **<u>Master's student in Operational Research</u>** with a focus on **optimization**, **machine learning**, and **data-driven decision-making**. My work spans **combinatorial optimization** (MILP, TSP, heuristics using Gurobi and OR-Tools), **predictive modelling** (XGBoost, clustering), and applied analytics.
