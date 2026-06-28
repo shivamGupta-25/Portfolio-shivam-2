@@ -318,126 +318,269 @@ Processed and managed **documentation** related to **admissions, recruitment and
   ],
   projects: [
     {
-      title: "Chat Collect",
-      href: "https://chatcollect.com",
-      dates: "Jan 2024 - Feb 2024",
+      title: "Traveling Salesman Problem at Scale — MTZ MILP on Indian Road Network",
+      href: "#",
+      dates: "Jun 2025",
       active: true,
       description:
-        "With the release of the [OpenAI GPT Store](https://openai.com/blog/introducing-the-gpt-store), I decided to build a SaaS which allows users to collect email addresses from their GPT users. This is a great way to build an audience and monetize your GPT API usage.",
+        `Solved the **asymmetric TSP across 1,000 Indian cities** as a **MTZ MILP in Gurobi 13**, using real driving distances from the OSRM API — not haversine approximations.
+
+- Built a **1,000 x 1,000 OSRM distance matrix** via batched API calls; formulated with **~999K binary arc variables** and **~999K subtour-elimination constraints**
+- Ran **7 experiments** (N ∈ {10 … 1,000}, 7,200 s limit) — proved **global optimality for N ≤ 50** (0.00% MIP gap); documented MTZ's weak LP relaxation as the bottleneck for N ≥ 250
+- Deployed **interactive Folium / Leaflet.js tour maps** with live OSRM road geometry for all instances`,
       technologies: [
-        "Next.js",
-        "Typescript",
-        "PostgreSQL",
-        "Prisma",
-        "TailwindCSS",
-        "Stripe",
-        "Shadcn UI",
-        "Magic UI",
+        "Python",
+        "Gurobi 13 (gurobipy)",
+        "OSRM API",
+        "Folium",
+        "NumPy",
+        "Pandas",
+        "Matplotlib",
       ],
       links: [
         {
-          type: "Website",
-          href: "https://chatcollect.com",
-          icon: <Icons.globe className="size-3" />,
-        },
-      ],
-      image: "",
-      video:
-        "https://pub-83c5db439b40468498f97946200806f7.r2.dev/chat-collect.mp4",
-    },
-    {
-      title: "Magic UI",
-      href: "https://magicui.design",
-      dates: "June 2023 - Present",
-      active: true,
-      description:
-        "Designed, developed and sold animated UI components for developers.",
-      technologies: [
-        "Next.js",
-        "Typescript",
-        "PostgreSQL",
-        "Prisma",
-        "TailwindCSS",
-        "Stripe",
-        "Shadcn UI",
-        "Magic UI",
-      ],
-      links: [
-        {
-          type: "Website",
-          href: "https://magicui.design",
-          icon: <Icons.globe className="size-3" />,
-        },
-        {
-          type: "Source",
-          href: "https://github.com/magicuidesign/magicui",
+          type: "GitHub",
+          href: "#",
           icon: <Icons.github className="size-3" />,
         },
       ],
-      image: "",
-      video: "https://cdn.magicui.design/bento-grid.mp4",
+      image: "/Projects/tsp_scaling_analysis.png",
+      video: "",
     },
     {
-      title: "llm.report",
-      href: "https://llm.report",
-      dates: "April 2023 - September 2023",
+      title: "Customer Lifetime Value Prediction",
+      href: "#",
+      dates: "Apr 2025",
       active: true,
       description:
-        "Developed an open-source logging and analytics platform for OpenAI: Log your ChatGPT API requests, analyze costs, and improve your prompts.",
+        `End-to-end **CLV prediction pipeline** on **3,900+ e-commerce customers** combining RFM analysis, K-Means clustering, and XGBoost classification to identify high-value customer segments.
+
+- Applied **RFM feature engineering** and **K-Means** to segment customers into 3 LTV tiers — uncovering a **20× revenue gap** between top and bottom clusters
+- Trained an **XGBoost multi-class classifier** achieving **92% test accuracy** and **weighted F1-score of 0.92**
+- Reached **96% precision** on the largest customer cluster, enabling targeted retention and upsell strategies`,
       technologies: [
-        "Next.js",
-        "Typescript",
-        "PostgreSQL",
-        "Prisma",
-        "TailwindCSS",
-        "Shadcn UI",
-        "Magic UI",
-        "Stripe",
-        "Cloudflare Workers",
+        "Python",
+        "XGBoost",
+        "Scikit-learn",
+        "K-Means",
+        "Streamlit",
+        "NumPy",
+        "Pandas",
       ],
       links: [
         {
           type: "Website",
-          href: "https://llm.report",
+          href: "#",
           icon: <Icons.globe className="size-3" />,
         },
+      ],
+      image: "",
+      video: "",
+    },
+    {
+      title: "Demand Forecasting",
+      href: "https://demandforecasting-app.streamlit.app/",
+      dates: "Mar 2026",
+      active: true,
+      description:
+        `End-to-end **retail demand forecasting pipeline** on **76K+ records** spanning 5 product categories, 4 regions, and 4 seasons — deployed as an interactive Streamlit app.
+
+- Engineered **16 raw attributes** into predictive features including Sell-Through Rate, Discounted Price, and seasonal demand signals
+- Tuned an **XGBoost Regressor** via RandomizedSearchCV (**25 iterations, 3-fold CV**) across 6 hyperparameters covering price, discount, inventory, promotion, and competitor pricing
+- Delivered real-time demand predictions through a **Streamlit web application** for non-technical business users`,
+      technologies: [
+        "Python",
+        "XGBoost",
+        "Streamlit",
+        "Scikit-learn",
+        "Pandas",
+        "NumPy",
+      ],
+      links: [
         {
           type: "Source",
-          href: "https://github.com/dillionverma/llm.report",
+          href: "https://github.com/shivamGupta-25/Demand-Forecasting",
+          icon: <Icons.github className="size-3" />,
+        },
+        {
+          type: "Website",
+          href: "https://demandforecasting.streamlit.app/",
+          icon: <Icons.globe className="size-3" />,
+        },
+      ],
+      image: "/Projects/DemandForecasting.png",
+      video: "",
+    },
+    {
+      title: "HR Analytics Dashboard - IIT Kanpur",
+      href: "https://github.com/shivamGupta-25/Excel-PowerBI/tree/main/EICT%20IIT%20Kanpur%20Adv.%20Excel/Major%20Project/Power%20BI%20Project",
+      dates: "Aug 2025",
+      active: true,
+      description:
+        `Interactive Power BI dashboard monitoring **workforce KPIs across 1,470 employees** (attrition, income, tenure, overtime) to support data-driven HR planning.
+
+- Performed **segmentation analysis** across department, age band, gender, and job satisfaction to surface high-risk attrition groups
+- Built **DAX measures** for dynamic KPI calculations and Power Query pipelines for data transformation
+- Enabled actionable insights to guide **retention strategy** and resource allocation decisions`,
+      technologies: [
+        "Advanced Excel",
+        "Power Query",
+        "Power BI",
+        "DAX",
+      ],
+      links: [
+        {
+          type: "Source",
+          href: "https://github.com/shivamGupta-25/Excel-PowerBI/tree/main/EICT%20IIT%20Kanpur%20Adv.%20Excel/Major%20Project/Power%20BI%20Project",
           icon: <Icons.github className="size-3" />,
         },
       ],
-      image: "",
-      video: "https://cdn.llm.report/openai-demo.mp4",
+      image: "/Projects/HRAnalyticsDashboard.jpg",
+      video: "",
     },
     {
-      title: "Automatic Chat",
-      href: "https://automatic.chat",
-      dates: "April 2023 - March 2024",
+      title: "Adidas Sales Dashboard",
+      href: "#",
+      dates: "Aug 2025",
       active: true,
       description:
-        "Developed an AI Customer Support Chatbot which automatically responds to customer support tickets using the latest GPT models.",
+        `Excel-based interactive sales dashboard tracking **Adidas revenue, units sold, and operating margin** across regions, products, and retail channels.
+
+- Built **dynamic pivot tables and charts** with slicers for real-time filtering by region, retailer, and product category
+- Identified **top-performing regions and sales channels** to surface actionable growth opportunities
+- Designed a clean, executive-ready layout optimised for non-technical stakeholders`,
+      technologies: [
+        "Advanced Excel",
+        "Pivot Tables",
+        "Pivot Charts",
+        "Slicers",
+        "Dashboard",
+      ],
+      links: [],
+      image: "/Projects/AdidasSalesDashboard.png",
+      video: "",
+    },
+    {
+      title: "Computer Science Society Website – Shivaji College",
+      href: "https://websters-shivaji.vercel.app/",
+      dates: "Apr 2025",
+      active: true,
+      description:
+        `Full-stack website for the Websters CS Society at Shivaji College, deployed on Vercel with event management and admin tooling.
+
+- Built **event registration** with automated email notifications and backend duplicate-entry validation
+- Designed a **secure admin dashboard** with REST APIs and **MongoDB** for real-time analytics
+- Delivered a fully **responsive UI** using Next.js, TailwindCSS, and Shadcn UI`,
       technologies: [
         "Next.js",
-        "Typescript",
-        "PostgreSQL",
-        "Prisma",
+        "React",
         "TailwindCSS",
         "Shadcn UI",
-        "Magic UI",
-        "Stripe",
-        "Cloudflare Workers",
+        "MongoDB",
       ],
       links: [
         {
+          type: "Source",
+          href: "https://github.com/shivamGupta-25/websters-shivaji",
+          icon: <Icons.github className="size-3" />,
+        },
+        {
           type: "Website",
-          href: "https://automatic.chat",
+          href: "https://websters-shivaji.vercel.app/",
           icon: <Icons.globe className="size-3" />,
         },
       ],
-      image: "",
-      video:
-        "https://pub-83c5db439b40468498f97946200806f7.r2.dev/automatic-chat.mp4",
+      image: "/Projects/WebstersWebsite.png",
+      video: "",
     },
+    {
+      title: "Student Database Management System with User and Admin Dashboard",
+      href: "https://github.com/shivamGupta-25/CustomTkinter-Database-Project-Version-2-SQLite-Integrated",
+      dates: "Nov 2024",
+      active: true,
+      description:
+        `A Python desktop application for student data management with dual-role access and secure authentication.
+
+- Built **User & Admin Dashboards** with **CustomTkinter** for a modern, responsive GUI
+- Integrated **SQLite** for lightweight local data storage and efficient CRUD operations
+- Implemented **email-based OTP authentication** via smtplib for secure login and password recovery`,
+      technologies: [
+        "Python",
+        "CustomTkinter",
+        "SQLite",
+        "smtplib"
+      ],
+      links: [
+        {
+          type: "Source",
+          href: "https://github.com/shivamGupta-25/CustomTkinter-Database-Project-Version-2-SQLite-Integrated",
+          icon: <Icons.github className="size-3" />,
+        },
+      ],
+      image: [
+        "/Projects/StudentDashoardApp_1.png",
+        "/Projects/StudentDashoardApp_2.png",
+        "/Projects/StudentDashoardApp_3.png",
+      ],
+      video: "",
+    },
+    {
+      title: "Performance Analytics",
+      href: "https://github.com/shivamGupta-25/Sales-Analysis-Using-Python",
+      dates: "Apr 2024",
+      active: true,
+      description:
+        `Analyzed **12 months of transactional sales data (180K+ records)** using Python to surface revenue drivers and demand patterns.
+
+- Cleaned and consolidated raw data with **Pandas**; engineered time-based and location-based features
+- Identified **peak sales periods**, top-performing regions, and optimal marketing windows
+- Uncovered **product bundling opportunities** to support pricing and revenue optimization strategy`,
+      technologies: [
+        "Python",
+        "Pandas",
+        "Matplotlib",
+        "Seaborn",
+        "EDA"
+      ],
+      links: [
+        {
+          type: "Source",
+          href: "https://github.com/shivamGupta-25/Sales-Analysis-Using-Python/blob/main/Sales_Analysis.ipynb",
+          icon: <Icons.github className="size-3" />,
+        },
+      ],
+      image: [
+        "/Projects/Performance Analytics_1.png",
+        "/Projects/Performance Analytics_2.png",
+        "/Projects/Performance Analytics_3.png",
+        "/Projects/Performance Analytics_4.png"
+      ],
+      video: "",
+    },
+    {
+      title: "Data Quality Improvement for Analytics",
+      href: "https://github.com/shivamGupta-25/Nashville-Housing-Data-Cleaning-Using-SQL",
+      dates: "Mar 2024",
+      active: true,
+      description:
+        `Cleaned and standardized **56K+ Nashville housing records** using MS SQL Server to improve data consistency and downstream query performance.
+
+- Normalized date formats, parsed raw addresses into atomic fields, and standardized categorical values
+- Built a reusable **SQL data-cleaning pipeline** with CTEs, window functions, and string operations
+- Removed duplicates and redundant columns, reducing dataset size by **∼18%**`,
+      technologies: [
+        "MS SQL Server",
+        "ETL",
+      ],
+      links: [
+        {
+          type: "Source",
+          href: "https://github.com/shivamGupta-25/Nashville-Housing-Data-Cleaning-Using-SQL",
+          icon: <Icons.github className="size-3" />,
+        },
+      ],
+      image: "/Projects/Data Quality Improvement for Analytics.png",
+      video: "",
+    }
   ],
 } as const;
