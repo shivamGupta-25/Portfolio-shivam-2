@@ -1,6 +1,7 @@
 import { Icons } from "@/components/icons";
-import { HomeIcon, NotebookIcon } from "lucide-react";
+import { HomeIcon } from "lucide-react";
 // Data Analysis
+import { Python } from "@/components/ui/svgs/python";
 import { Pandas } from "@/components/ui/svgs/pandas";
 import { Numpy } from "@/components/ui/svgs/numpy";
 import { Matplotlib } from "@/components/ui/svgs/matplotlib";
@@ -46,6 +47,7 @@ export const DATA = {
     {
       category: "Data Analysis",
       items: [
+        { name: "Python", icon: Python },
         { name: "Pandas", icon: Pandas },
         { name: "NumPy", icon: Numpy },
         { name: "Matplotlib", icon: Matplotlib },
@@ -119,7 +121,100 @@ export const DATA = {
   },
 
   workData: {
-    fullTime: [],
+    /**
+     * Full-time entries support an optional `roles` array for career
+     * progression within the same company (newest role first).
+     * When `roles` is present, the accordion expands to show a timeline
+     * instead of a flat description.
+     */
+    fullTime: [
+      /*
+      {
+        company: "TechCorp Solutions",
+        href: "https://example.com",
+        location: "New Delhi, India",
+        logoUrl: "/frost_sullivan_logo.png",
+        // title & dates reflect the most-recent role (shown in header)
+        title: "Engineering Manager",
+        start: "Jul 2019",
+        end: "Present",
+        description: "",            // unused when roles[] is present
+        roles: [
+          {
+            title: "Engineering Manager",
+            start: "Jan 2024",
+            end: "Present",
+            badge: "Current",
+            description:
+              "Leading a cross-functional team of **12 engineers** across Data & Platform squads. Defined the **OKR framework**, drove a **40 % reduction in incident MTTR**, and championed a culture of continuous improvement through weekly retrospectives and 1-on-1s.",
+          },
+          {
+            title: "Senior Data Scientist",
+            start: "Jun 2022",
+            end: "Dec 2023",
+            badge: null,
+            description:
+              "Architected an **end-to-end ML pipeline** (feature store → training → serving) that reduced model deployment time from 3 weeks to **2 days**. Built a churn-prediction model (XGBoost + SHAP) that saved **₹1.2 Cr ARR**.",
+          },
+          {
+            title: "Data Scientist",
+            start: "Mar 2021",
+            end: "May 2022",
+            badge: null,
+            description:
+              "Developed **ETL pipelines** in Python/PySpark, created Power BI dashboards consumed by 200+ stakeholders, and ran A/B tests that improved conversion rate by **8 %** on the checkout funnel.",
+          },
+          {
+            title: "Software Developer",
+            start: "Jul 2019",
+            end: "Feb 2021",
+            badge: "Started here",
+            description:
+              "Built and maintained **REST APIs** (Node.js + PostgreSQL), migrated a monolith to microservices using Docker & Kubernetes, and improved CI/CD pipeline build times by **35 %** with caching strategies.",
+          },
+        ],
+      },
+      {
+        company: "DataVision Analytics",
+        href: "https://example.com",
+        location: "Mumbai, India",
+        logoUrl: "/Delhi_University.png",
+        title: "Lead Analyst",
+        start: "Jan 2018",
+        end: "Jun 2019",
+        description: "",
+        roles: [
+          {
+            title: "Lead Analyst",
+            start: "Aug 2018",
+            end: "Jun 2019",
+            badge: "Promoted",
+            description:
+              "Supervised a team of 4 analysts, owned the **client reporting cadence**, and introduced **automated alerting** that reduced manual monitoring effort by 60 %.",
+          },
+          {
+            title: "Junior Analyst",
+            start: "Jan 2018",
+            end: "Jul 2018",
+            badge: "Started here",
+            description:
+              "Cleaned and modelled datasets in **Excel & SQL**, produced weekly KPI decks for C-suite stakeholders, and identified a data-quality issue saving the firm **₹15 L** in erroneous billing.",
+          },
+        ],
+      },
+      {
+        company: "TalentXmind",
+        href: "https://example.com",
+        location: "Mumbai, India",
+        logoUrl: "/Delhi_University.png",
+        title: "Lead Analyst",
+        start: "Jan 2018",
+        end: "Jun 2019",
+        description: "",
+        roles: [],
+      },
+      */
+    ],
 
     internships: [
       {
