@@ -11,6 +11,8 @@ import {
 import { DATA, SHOW_WORK_BY_CATEGORY } from "@/data/resume";
 import { ChevronDown, ChevronRight } from "lucide-react";
 import { cn } from "@/lib/utils";
+import Markdown from "react-markdown";
+import rehypeRaw from "rehype-raw";
 
 function LogoImage({ src, alt }: { src: string; alt: string }) {
   const [imageError, setImageError] = useState(false);
@@ -98,8 +100,8 @@ function WorkItem({ work }: { work: WorkEntry }) {
           </div>
         </div>
       </AccordionTrigger>
-      <AccordionContent className="p-0 ml-13 text-xs sm:text-sm text-muted-foreground">
-        {work.description}
+      <AccordionContent className="p-0 ml-13 text-xs sm:text-sm text-muted-foreground prose dark:prose-invert max-w-full text-pretty font-sans leading-relaxed prose-p:my-1">
+        <Markdown rehypePlugins={[rehypeRaw]}>{work.description}</Markdown>
       </AccordionContent>
     </AccordionItem>
   );

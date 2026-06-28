@@ -1,12 +1,11 @@
 /* eslint-disable @next/next/no-img-element */
 import BlurFade from "@/components/magicui/blur-fade";
 import BlurFadeText from "@/components/magicui/blur-fade-text";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+
 import { DATA } from "@/data/resume";
 import Link from "next/link";
 import Markdown from "react-markdown";
 import ContactSection from "@/components/section/contact-section";
-import HackathonsSection from "@/components/section/hackathons-section";
 import ProjectsSection from "@/components/section/projects-section";
 import WorkSection from "@/components/section/work-section";
 import { ArrowUpRight } from "lucide-react";
@@ -42,10 +41,20 @@ export default function Page() {
               </BlurFade>
             </div>
             <BlurFade delay={BLUR_FADE_DELAY} className="order-1 md:order-2">
-              <Avatar className="size-24 md:size-32 border rounded-full shadow-lg ring-4 ring-muted">
-                <AvatarImage alt={DATA.name} src={DATA.avatarUrl} />
-                <AvatarFallback>{DATA.initials}</AvatarFallback>
-              </Avatar>
+              <div className="group relative size-24 md:size-32 rounded-full shadow-lg ring-4 ring-muted cursor-pointer flex-shrink-0">
+                {/* Bottom image */}
+                <img
+                  src={DATA.hoverAvatarUrl}
+                  alt={`${DATA.name} casual`}
+                  className="absolute inset-0 size-full rounded-full object-cover object-top"
+                />
+                {/* Top image: fades out on hover */}
+                <img
+                  src={DATA.avatarUrl}
+                  alt={DATA.name}
+                  className="absolute inset-0 size-full rounded-full object-cover object-top transition-opacity duration-500 ease-in-out opacity-100 group-hover:opacity-0"
+                />
+              </div>
             </BlurFade>
           </div>
         </div>
@@ -149,11 +158,6 @@ export default function Page() {
       <section id="projects">
         <BlurFade delay={BLUR_FADE_DELAY * 11}>
           <ProjectsSection />
-        </BlurFade>
-      </section>
-      <section id="hackathons">
-        <BlurFade delay={BLUR_FADE_DELAY * 13}>
-          <HackathonsSection />
         </BlurFade>
       </section>
       <section id="contact">
