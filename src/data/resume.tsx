@@ -343,8 +343,30 @@ Processed and managed **documentation** related to **admissions, recruitment and
           href: "#",
           icon: <Icons.github className="size-3" />,
         },
+        {
+          type: "Tour Maps",
+          icon: <Icons.globe className="size-3" />,
+          group: [
+            { label: "N = 10 cities", href: "/Projects/HTML_TourMap/tsp_tour_N10.html" },
+            { label: "N = 50 cities", href: "/Projects/HTML_TourMap/tsp_tour_N50.html" },
+            { label: "N = 100 cities", href: "/Projects/HTML_TourMap/tsp_tour_N100.html" },
+            { label: "N = 250 cities", href: "/Projects/HTML_TourMap/tsp_tour_N250.html" },
+            { label: "N = 500 cities", href: "/Projects/HTML_TourMap/tsp_tour_N500.html" },
+            { label: "N = 750 cities", href: "/Projects/HTML_TourMap/tsp_tour_N750.html" },
+            { label: "N = 1,000 cities", href: "/Projects/HTML_TourMap/tsp_tour_N1000.html" },
+          ],
+        },
       ],
-      image: "/Projects/tsp_scaling_analysis.png",
+      image: [
+        "/Projects/tsp_scaling_analysis.png",
+        "/Projects/TSP_10.png",
+        "/Projects/TSP_50.png",
+        "/Projects/TSP_100.png",
+        "/Projects/TSP_250.png",
+        "/Projects/TSP_500.png",
+        "/Projects/TSP_750.png",
+        "/Projects/TSP_1000.png",
+      ],
       video: "",
     },
     {
@@ -369,9 +391,9 @@ Processed and managed **documentation** related to **admissions, recruitment and
       ],
       links: [
         {
-          type: "Website",
+          type: "GitHub",
           href: "#",
-          icon: <Icons.globe className="size-3" />,
+          icon: <Icons.github className="size-3" />,
         },
       ],
       image: "",
@@ -461,7 +483,7 @@ Processed and managed **documentation** related to **admissions, recruitment and
       video: "",
     },
     {
-      title: "Computer Science Society Website – Shivaji College",
+      title: "Computer Science Society Website - Shivaji College",
       href: "https://websters-shivaji.vercel.app/",
       dates: "Apr 2025",
       active: true,
@@ -526,7 +548,7 @@ Processed and managed **documentation** related to **admissions, recruitment and
     },
     {
       title: "Performance Analytics",
-      href: "https://github.com/shivamGupta-25/Sales-Analysis-Using-Python",
+      href: "https://github.com/shivamGupta-25/Sales-Analysis-Using-Python/blob/main/Sales_Analysis.ipynb",
       dates: "Apr 2024",
       active: true,
       description:
@@ -545,7 +567,7 @@ Processed and managed **documentation** related to **admissions, recruitment and
       links: [
         {
           type: "Source",
-          href: "https://github.com/shivamGupta-25/Sales-Analysis-Using-Python/blob/main/Sales_Analysis.ipynb",
+          href: "https://github.com/shivamGupta-25/Sales-Analysis-Using-Python",
           icon: <Icons.github className="size-3" />,
         },
       ],
@@ -559,7 +581,7 @@ Processed and managed **documentation** related to **admissions, recruitment and
     },
     {
       title: "Data Quality Improvement for Analytics",
-      href: "https://github.com/shivamGupta-25/Nashville-Housing-Data-Cleaning-Using-SQL",
+      href: "https://github.com/shivamGupta-25/Nashville-Housing-Data-Cleaning-Using-SQL/blob/main/Nashville-Housing_Data_Cleaning.sql",
       dates: "Mar 2024",
       active: true,
       description:
@@ -567,7 +589,7 @@ Processed and managed **documentation** related to **admissions, recruitment and
 
 - Normalized date formats, parsed raw addresses into atomic fields, and standardized categorical values
 - Built a reusable **SQL data-cleaning pipeline** with CTEs, window functions, and string operations
-- Removed duplicates and redundant columns, reducing dataset size by **∼18%**`,
+- Removed duplicates and redundant columns, reducing dataset size by **~18%**`,
       technologies: [
         "MS SQL Server",
         "ETL",

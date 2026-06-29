@@ -2,8 +2,16 @@
 
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 import { cn } from "@/lib/utils";
-import { ArrowUpRight, X, ZoomIn } from "lucide-react";
+import { ArrowUpRight, ChevronDown, X, ZoomIn } from "lucide-react";
 import Link from "next/link";
 import { useState, useEffect, useRef } from "react";
 import { createPortal } from "react-dom";
@@ -172,7 +180,59 @@ function useAutoCarousel(images: readonly string[], alt: string): CarouselResult
   return { current, node };
 }
 
-// ─── Props ────────────────────────────────────────────────────────────────────
+// ─── Link-group dropdown (Shadcn DropdownMenu) ─────────────────────────────
+function LinkGroupDropdown({
+  icon,
+  type,
+  group,
+}: {
+  icon: React.ReactNode;
+  type: string;
+  group: readonly { label: string; href: string }[];
+}) {
+  return (
+    <DropdownMenu>
+      <DropdownMenuTrigger
+        onClick={(e) => e.stopPropagation()}
+        className="flex items-center gap-1.5 text-xs font-medium px-3 py-1.5 rounded-md
+                   border border-border bg-background text-foreground
+                   hover:bg-accent hover:text-accent-foreground
+                   transition-colors duration-150 focus-visible:outline-none
+                   focus-visible:ring-2 focus-visible:ring-ring [&_svg]:size-3.5"
+      >
+        {icon}
+        <span>{type}</span>
+        <ChevronDown className="size-3 transition-transform duration-200 data-[state=open]:rotate-180" />
+      </DropdownMenuTrigger>
+
+      <DropdownMenuContent
+        align="start"
+        side="top"
+        onClick={(e) => e.stopPropagation()}
+        className="min-w-[140px]"
+      >
+        <DropdownMenuLabel className="text-xs text-muted-foreground">
+          {type}
+        </DropdownMenuLabel>
+        <DropdownMenuSeparator />
+        {group.map((item) => (
+          <DropdownMenuItem key={item.href} asChild>
+            <a
+              href={item.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-xs cursor-pointer"
+            >
+              {item.label}
+            </a>
+          </DropdownMenuItem>
+        ))}
+      </DropdownMenuContent>
+    </DropdownMenu>
+  );
+}
+
+
 interface Props {
   title: string;
   href?: string;
@@ -185,7 +245,8 @@ interface Props {
   links?: readonly {
     icon: React.ReactNode;
     type: string;
-    href: string;
+    href?: string;
+    group?: readonly { label: string; href: string }[];
   }[];
   className?: string;
 }
@@ -295,23 +356,32 @@ export function ProjectCard({
           {/* ── Links row ── */}
           {links && links.length > 0 && (
             <div className="flex flex-wrap items-center justify-center gap-4">
-              {links.map((link, idx) => (
-                <Link
-                  key={idx}
-                  href={link.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  onClick={(e) => e.stopPropagation()}
-                  className="flex items-center gap-1.5 text-xs font-medium px-3 py-1.5 rounded-md
-                             border border-border bg-background text-foreground
-                             hover:bg-accent hover:text-accent-foreground
-                             transition-colors duration-150 focus-visible:outline-none
-                             focus-visible:ring-2 focus-visible:ring-ring [&_svg]:size-3.5"
-                >
-                  {link.icon}
-                  <span>{link.type}</span>
-                </Link>
-              ))}
+              {links.map((link, idx) =>
+                link.group ? (
+                  <LinkGroupDropdown
+                    key={idx}
+                    icon={link.icon}
+                    type={link.type}
+                    group={link.group}
+                  />
+                ) : (
+                  <Link
+                    key={idx}
+                    href={link.href ?? "#"}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={(e) => e.stopPropagation()}
+                    className="flex items-center gap-1.5 text-xs font-medium px-3 py-1.5 rounded-md
+                               border border-border bg-background text-foreground
+                               hover:bg-accent hover:text-accent-foreground
+                               transition-colors duration-150 focus-visible:outline-none
+                               focus-visible:ring-2 focus-visible:ring-ring [&_svg]:size-3.5"
+                  >
+                    {link.icon}
+                    <span>{link.type}</span>
+                  </Link>
+                )
+              )}
             </div>
           )}
 
