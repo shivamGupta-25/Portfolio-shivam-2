@@ -38,6 +38,11 @@ export const DATA = {
   initials: "SG",
   url: "https://shivamgupta-25.vercel.app/",
   location: "New Delhi, India",
+  weather: {
+    latitude: 28.6139,
+    longitude: 77.209,
+    timezone: "Asia/Kolkata",
+  },
   description: "At the Intersection of Data Science, Machine Learning, Optimization, & Data Analytics to drive Better Decisions.",
   summary: `I'm a **<u>Master's student in Operational Research</u>** with a focus on **optimization**, **machine learning**, and **data-driven decision-making**. My work spans **combinatorial optimization** (MILP, TSP, heuristics using Gurobi and OR-Tools), **predictive modelling** (XGBoost, clustering), and applied analytics.
 

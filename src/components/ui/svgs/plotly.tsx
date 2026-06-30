@@ -1,7 +1,7 @@
 import type { SVGProps } from "react";
 
 const Plotly = (props: SVGProps<SVGSVGElement>) => (
-  <svg {...props} viewBox="0 0 64 64" fill="none">
+  <svg {...props} viewBox="0 0 64 64" fill="none" overflow="hidden">
     <rect x="12" y="36" width="6" height="18" rx="1" className="fill-[#3F4F75] dark:fill-slate-300" />
     <rect x="20" y="28" width="6" height="26" rx="1" className="fill-[#3F4F75] dark:fill-slate-300" />
     <rect x="28" y="16" width="6" height="38" rx="1" className="fill-[#3F4F75] dark:fill-slate-300" />

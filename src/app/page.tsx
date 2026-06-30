@@ -6,6 +6,7 @@ import { DATA } from "@/data/resume";
 import Link from "next/link";
 import Markdown from "react-markdown";
 import rehypeRaw from "rehype-raw";
+import { DateTimeWeather } from "@/components/datetime-weather";
 import ContactSection from "@/components/section/contact-section";
 import ProjectsSection from "@/components/section/projects-section";
 import WorkSection from "@/components/section/work-section";
@@ -18,6 +19,9 @@ export default function Page() {
     <main className="min-h-dvh flex flex-col gap-14 relative">
       <section id="hero">
         <div className="mx-auto w-full max-w-2xl space-y-8">
+          <BlurFade delay={BLUR_FADE_DELAY}>
+            <DateTimeWeather />
+          </BlurFade>
           <div className="gap-2 gap-y-6 flex flex-col md:flex-row justify-between">
             <div className="gap-2 flex flex-col order-2 md:order-1">
               <BlurFadeText

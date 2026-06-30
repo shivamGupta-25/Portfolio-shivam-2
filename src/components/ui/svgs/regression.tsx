@@ -1,7 +1,7 @@
 import type { SVGProps } from "react";
 
 const Regression = (props: SVGProps<SVGSVGElement>) => (
-  <svg {...props} viewBox="0 0 64 64" fill="none">
+  <svg {...props} viewBox="0 0 64 64" fill="none" overflow="hidden">
     <line x1="10" y1="54" x2="10" y2="10" className="stroke-[#6C757D] dark:stroke-neutral-400" strokeWidth="2" />
     <line x1="10" y1="54" x2="54" y2="54" className="stroke-[#6C757D] dark:stroke-neutral-400" strokeWidth="2" />
     <line x1="12" y1="48" x2="52" y2="14" className="stroke-[#007BFF] dark:stroke-sky-400" strokeWidth="2.5" strokeLinecap="round" />

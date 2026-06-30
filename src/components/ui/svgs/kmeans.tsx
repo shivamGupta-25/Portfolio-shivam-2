@@ -1,7 +1,7 @@
 import type { SVGProps } from "react";
 
 const Kmeans = (props: SVGProps<SVGSVGElement>) => (
-  <svg {...props} viewBox="0 0 64 64" fill="none">
+  <svg {...props} viewBox="0 0 64 64" fill="none" overflow="hidden">
     {/* Cluster 1 */}
     <circle cx="18" cy="20" r="3" fill="#E53935" />
     <circle cx="14" cy="16" r="2" fill="#E53935" opacity="0.7" />

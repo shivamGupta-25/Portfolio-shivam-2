@@ -1,7 +1,7 @@
 import type { SVGProps } from "react";
 
 const PivotTable = (props: SVGProps<SVGSVGElement>) => (
-  <svg {...props} viewBox="0 0 64 64" fill="none">
+  <svg {...props} viewBox="0 0 64 64" fill="none" overflow="hidden">
     <rect x="8" y="8" width="48" height="48" rx="4" fill="none" className="stroke-[#217346] dark:stroke-green-400" strokeWidth="2.5" />
     <rect x="8" y="8" width="48" height="12" rx="4" className="fill-[#217346] dark:fill-green-400" />
     <rect x="8" y="8" width="16" height="48" rx="4" className="fill-[#217346] dark:fill-green-400" opacity="0.6" />

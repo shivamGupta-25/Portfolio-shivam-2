@@ -1,7 +1,7 @@
 import type { SVGProps } from "react";
 
 const Xgboost = (props: SVGProps<SVGSVGElement>) => (
-  <svg {...props} viewBox="0 0 64 64" fill="none">
+  <svg {...props} viewBox="0 0 64 64" fill="none" overflow="hidden">
     <circle cx="32" cy="14" r="6" fill="#1E88E5" stroke="#1565C0" strokeWidth="1.5" />
     <circle cx="18" cy="34" r="5" fill="#43A047" stroke="#2E7D32" strokeWidth="1.5" />
     <circle cx="46" cy="34" r="5" fill="#E53935" stroke="#C62828" strokeWidth="1.5" />

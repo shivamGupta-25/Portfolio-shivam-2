@@ -1,7 +1,7 @@
 import type { SVGProps } from "react";
 
 const Vba = (props: SVGProps<SVGSVGElement>) => (
-  <svg {...props} viewBox="0 0 64 64" fill="none">
+  <svg {...props} viewBox="0 0 64 64" fill="none" overflow="hidden">
     <rect x="8" y="8" width="48" height="48" rx="6" fill="#867DB1" />
     <text
       x="32"

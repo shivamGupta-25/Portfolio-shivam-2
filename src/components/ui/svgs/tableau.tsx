@@ -1,7 +1,7 @@
 import type { SVGProps } from "react";
 
 const Tableau = (props: SVGProps<SVGSVGElement>) => (
-  <svg {...props} viewBox="0 0 64 64" fill="none">
+  <svg {...props} viewBox="0 0 64 64" fill="none" overflow="hidden">
     <line x1="32" y1="8" x2="32" y2="26" stroke="#E97627" strokeWidth="4" />
     <line x1="23" y1="17" x2="41" y2="17" stroke="#E97627" strokeWidth="4" />
     <line x1="32" y1="38" x2="32" y2="56" stroke="#E97627" strokeWidth="4" />
