@@ -70,7 +70,7 @@ export default function Page() {
             <h2 className="text-xl font-bold">About</h2>
           </BlurFade>
           <BlurFade delay={BLUR_FADE_DELAY * 4}>
-            <div className="prose max-w-full text-pretty font-sans leading-relaxed text-muted-foreground dark:prose-invert text-justify">
+            <div className="prose max-w-full text-pretty font-sans leading-relaxed text-muted-foreground dark:prose-invert">
               <Markdown rehypePlugins={[rehypeRaw]}>
                 {DATA.summary}
               </Markdown>
@@ -141,17 +141,25 @@ export default function Page() {
           <BlurFade delay={BLUR_FADE_DELAY * 9}>
             <h2 className="text-xl font-bold">Skills</h2>
           </BlurFade>
-          <div className="flex flex-col gap-4">
-            {DATA.skills.map((category, catIdx) => (
-              <BlurFade key={category.category} delay={BLUR_FADE_DELAY * 10 + catIdx * 0.1}>
-                <div className="flex flex-col gap-2">
-                  <h3 className="text-sm font-semibold text-muted-foreground">{category.category}</h3>
+          <div className="flex flex-col gap-y-4">
+            {DATA.skills.map((skillGroup, groupId) => (
+              <BlurFade key={skillGroup.category} delay={BLUR_FADE_DELAY * 10 + groupId * 0.05}>
+                <div className="flex flex-col gap-y-2">
+                  <span className="text-sm font-semibold text-muted-foreground">
+                    {skillGroup.category}
+                  </span>
                   <div className="flex flex-wrap gap-2">
-                    {category.items.map((skill) => (
-                      <div key={skill.name} className="border bg-background border-border ring-2 ring-border/20 rounded-xl h-8 w-fit px-4 flex items-center gap-2">
-                        {skill.icon && <skill.icon className="size-4 rounded overflow-hidden object-contain" />}
-                        <span className="text-foreground text-sm font-medium">{skill.name}</span>
-                      </div>
+                    {skillGroup.items.map((skill, id) => (
+                      <BlurFade key={skill.name} delay={BLUR_FADE_DELAY * 10 + groupId * 0.05 + id * 0.03}>
+                        <div className="border bg-background border-border ring-2 ring-border/20 rounded-xl h-8 w-fit px-4 flex items-center gap-2">
+                          {skill.icon && (
+                            <span className="size-4 flex items-center justify-center shrink-0 overflow-hidden">
+                              <skill.icon className="size-4" />
+                            </span>
+                          )}
+                          <span className="text-foreground text-sm font-medium">{skill.name}</span>
+                        </div>
+                      </BlurFade>
                     ))}
                   </div>
                 </div>
