@@ -54,6 +54,9 @@ interface LightboxProps {
 function Lightbox({ images, video, alt, initialIndex, onClose }: LightboxProps) {
   const [idx, setIdx] = useState(initialIndex);
   const backdropRef = useRef<HTMLDivElement>(null);
+  // Touch swipe tracking
+  const touchStartX = useRef<number | null>(null);
+  const touchStartY = useRef<number | null>(null);
 
   // Keyboard: Escape to close, ← → to navigate
   useEffect(() => {
@@ -79,6 +82,30 @@ function Lightbox({ images, video, alt, initialIndex, onClose }: LightboxProps) 
     if (e.target === backdropRef.current) onClose();
   };
 
+  // Touch handlers for swipe navigation
+  const handleTouchStart = (e: React.TouchEvent) => {
+    touchStartX.current = e.touches[0].clientX;
+    touchStartY.current = e.touches[0].clientY;
+  };
+
+  const handleTouchEnd = (e: React.TouchEvent) => {
+    if (touchStartX.current === null || touchStartY.current === null) return;
+    const dx = e.changedTouches[0].clientX - touchStartX.current;
+    const dy = e.changedTouches[0].clientY - touchStartY.current;
+    // Only handle horizontal swipes (dx dominant, threshold ≥ 40px)
+    if (Math.abs(dx) > Math.abs(dy) && Math.abs(dx) >= 40 && images.length > 1) {
+      if (dx < 0) {
+        // Swipe left → next image
+        setIdx((i) => (i + 1) % images.length);
+      } else {
+        // Swipe right → previous image
+        setIdx((i) => (i - 1 + images.length) % images.length);
+      }
+    }
+    touchStartX.current = null;
+    touchStartY.current = null;
+  };
+
   const content = (
     <div
       ref={backdropRef}
@@ -99,8 +126,12 @@ function Lightbox({ images, video, alt, initialIndex, onClose }: LightboxProps) 
         <X className="size-5" />
       </button>
 
-      {/* Media */}
-      <div className="relative flex items-center justify-center w-[92vw] max-w-5xl h-[85vh]">
+      {/* Media — swipeable on touch devices */}
+      <div
+        className="relative flex items-center justify-center w-[92vw] max-w-5xl h-[85vh] touch-pan-y"
+        onTouchStart={handleTouchStart}
+        onTouchEnd={handleTouchEnd}
+      >
         {video ? (
           <video
             src={video}
@@ -116,24 +147,54 @@ function Lightbox({ images, video, alt, initialIndex, onClose }: LightboxProps) 
             src={images[idx]}
             alt={`${alt} – ${idx + 1}`}
             className="max-w-full max-h-full rounded-sm shadow-2xl object-contain
-                       animate-in fade-in zoom-in-95 duration-200"
+                       animate-in fade-in zoom-in-95 duration-200 select-none pointer-events-none"
+            draggable={false}
           />
         ) : null}
       </div>
 
-      {/* Keyboard hints */}
+      {/* Dot indicator for multiple images */}
+      {images.length > 1 && (
+        <div className="absolute top-4 left-1/2 -translate-x-1/2 flex items-center gap-1.5">
+          {images.map((_, i) => (
+            <button
+              key={i}
+              onClick={(e) => { e.stopPropagation(); setIdx(i); }}
+              aria-label={`Go to image ${i + 1}`}
+              className={cn(
+                "rounded-full transition-all duration-200",
+                i === idx
+                  ? "w-4 h-1.5 bg-white"
+                  : "w-1.5 h-1.5 bg-white/40 hover:bg-white/70"
+              )}
+            />
+          ))}
+        </div>
+      )}
+
+      {/* Hint bar – swipe hint on mobile, keyboard hints on desktop */}
       <div className="absolute bottom-5 left-1/2 -translate-x-1/2 flex items-center gap-3 select-none">
+        {/* Mobile: swipe hint (hidden on sm+) */}
         {images.length > 1 && (
-          <span className="flex items-center gap-1.5 text-white/60 text-xs">
+          <span className="flex sm:hidden items-center gap-1.5 text-white/60 text-xs">
+            <Kbd className="bg-white/10 text-white/70 border border-white/20 px-2 whitespace-nowrap">swipe to navigate</Kbd>
+          </span>
+        )}
+
+        {/* Desktop: arrow key hints (hidden on mobile) */}
+        {images.length > 1 && (
+          <span className="hidden sm:flex items-center gap-1.5 text-white/60 text-xs">
             <Kbd className="bg-white/10 text-white/70 border border-white/20">←</Kbd>
             <Kbd className="bg-white/10 text-white/70 border border-white/20">→</Kbd>
             <span>navigate</span>
           </span>
         )}
+
         {images.length > 1 && (
-          <span className="text-white/30 text-xs">·</span>
+          <span className="hidden sm:inline text-white/30 text-xs">·</span>
         )}
-        <span className="flex items-center gap-1.5 text-white/60 text-xs">
+
+        <span className="hidden sm:flex items-center gap-1.5 text-white/60 text-xs">
           <Kbd className="bg-white/10 text-white/70 border border-white/20">Esc</Kbd>
           <span>close</span>
         </span>
