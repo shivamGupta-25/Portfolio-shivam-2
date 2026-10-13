@@ -135,105 +135,70 @@ What I enjoy most is bridging the gap between **mathematical rigour** and **prac
      */
     fullTime: [
       /*
+      // ── Trent Ltd. progression (uncomment when PPO + full-time join is confirmed) ──
       {
-        company: "TechCorp Solutions",
-        href: "https://example.com",
-        location: "New Delhi, India",
-        logoUrl: "/frost_sullivan_logo.png",
-        // title & dates reflect the most-recent role (shown in header)
-        title: "Engineering Manager",
-        start: "Jul 2019",
+        company: "Trent Ltd. - TATA Group",
+        href: "https://trentlimited.com/",
+        location: "Mumbai, India",
+        logoUrl: "/Trent_Logo.png",
+        // title & dates reflect the most-recent / current role (shown in the header)
+        title: "Data Scientist",
+        start: "Jun 2026",
         end: "Present",
-        description: "",            // unused when roles[] is present
+        description: "",  // unused — roles[] drives the accordion
         roles: [
           {
-            title: "Engineering Manager",
-            start: "Jan 2024",
+            title: "Data Scientist",
+            start: "Mar 2027",
             end: "Present",
             badge: "Current",
             description:
-              "Leading a cross-functional team of **12 engineers** across Data & Platform squads. Defined the **OKR framework**, drove a **40 % reduction in incident MTTR**, and championed a culture of continuous improvement through weekly retrospectives and 1-on-1s.",
+              "Continuing the Supply Chain analytics work with expanded scope — building and maintaining production ML pipelines and reporting infrastructure across the TATA Trent distribution network.",
           },
           {
-            title: "Senior Data Scientist",
-            start: "Jun 2022",
-            end: "Dec 2023",
-            badge: null,
+            title: "Full-Time Trainee",
+            start: "Jul 2026",
+            end: "Mar 2027",
+            badge: "PPO",
             description:
-              "Architected an **end-to-end ML pipeline** (feature store → training → serving) that reduced model deployment time from 3 weeks to **2 days**. Built a churn-prediction model (XGBoost + SHAP) that saved **₹1.2 Cr ARR**.",
+              "Converted to full-time via **Pre-Placement Offer (PPO)** following the internship. Continued contributing to Supply Chain analytics, refining the **Databricks/PySpark pipeline** and extending **Power BI (DAX)** dashboards for wider stakeholder adoption.",
           },
           {
-            title: "Data Scientist",
-            start: "Mar 2021",
-            end: "May 2022",
-            badge: null,
-            description:
-              "Developed **ETL pipelines** in Python/PySpark, created Power BI dashboards consumed by 200+ stakeholders, and ran A/B tests that improved conversion rate by **8 %** on the checkout funnel.",
-          },
-          {
-            title: "Software Developer",
-            start: "Jul 2019",
-            end: "Feb 2021",
+            title: "Data Science Intern — Supply Chain",
+            start: "Jun 2026",
+            end: "Jul 2026",
             badge: "Started here",
             description:
-              "Built and maintained **REST APIs** (Node.js + PostgreSQL), migrated a monolith to microservices using Docker & Kubernetes, and improved CI/CD pipeline build times by **35 %** with caching strategies.",
+              `- Automated ingestion and preprocessing of **SAP-sourced transactional (STO/STI) data**, dumped to SharePoint by the team, through a **Python/PySpark pipeline on Databricks** feeding final reporting, replacing a manual Excel process and **cutting reporting turnaround 75% (60+ min → 15 min)** across **8 distribution centers**.
+- Validated data quality and built **delivery compliance KPIs**, translating operational insights into **Power BI (DAX)** dashboards used by business stakeholders for performance reviews.`,
           },
         ],
-      },
-      {
-        company: "DataVision Analytics",
-        href: "https://example.com",
-        location: "Mumbai, India",
-        logoUrl: "/Delhi_University.png",
-        title: "Lead Analyst",
-        start: "Jan 2018",
-        end: "Jun 2019",
-        description: "",
-        roles: [
-          {
-            title: "Lead Analyst",
-            start: "Aug 2018",
-            end: "Jun 2019",
-            badge: "Promoted",
-            description:
-              "Supervised a team of 4 analysts, owned the **client reporting cadence**, and introduced **automated alerting** that reduced manual monitoring effort by 60 %.",
-          },
-          {
-            title: "Junior Analyst",
-            start: "Jan 2018",
-            end: "Jul 2018",
-            badge: "Started here",
-            description:
-              "Cleaned and modelled datasets in **Excel & SQL**, produced weekly KPI decks for C-suite stakeholders, and identified a data-quality issue saving the firm **₹15 L** in erroneous billing.",
-          },
-        ],
-      },
-      {
-        company: "TalentXmind",
-        href: "https://example.com",
-        location: "Mumbai, India",
-        logoUrl: "/Delhi_University.png",
-        title: "Lead Analyst",
-        start: "Jan 2018",
-        end: "Jun 2019",
-        description: "",
-        roles: [],
       },
       */
     ],
 
     internships: [
       {
+        company: "Trent Ltd. - TATA",
+        href: "https://trentlimited.com/",
+        location: "Mumbai, India",
+        title: "Data Science Intern - Supply Chain",
+        logoUrl: "/Trent_Logo.png",
+        start: "Jun 2026",
+        end: "Aug 2026",
+        description: `- Automated ingestion and preprocessing of **SAP-sourced transactional (STO/STI) data**, dumped to SharePoint by the team, through a **Python/PySpark pipeline on Databricks** feeding final reporting, replacing a manual Excel process and **cutting reporting turnaround 75% (60+ min → 15 min)** across **8 distribution centers**.
+- Validated data quality and built **delivery compliance KPIs**, translating operational insights into **Power BI (DAX)** dashboards used by business stakeholders for performance reviews.`,
+      },
+      {
         company: "Frost & Sullivan",
         href: "https://www.frost.com/",
         location: "Remote",
-        title: "Growth Advisory",
+        title: "Growth Advisory Intern",
         logoUrl: "/frost_sullivan_logo.png",
         start: "Apr 2026",
-        end: "Present",
-        description: `Automated **multi-sheet Excel workflows** using **VBA macros**, reducing manual effort and improving operational efficiency.
-
-  Built a **Python web scraping pipeline** to extract and structure large-scale market data.`,
+        end: "Jun 2026",
+        description: `- Automated market analysis tables and calculations across **15+ Excel worksheets** using **VBA macros and Advanced Excel**, reducing calculation time from **~5 minutes to under 1 minute** for sector-level research.
+- Built a **Python (Playwright)** web-scraping tool to extract **1,000-5,000 records monthly** directly from source, removing the team's paid-credit downloads and the manual scraping workaround previously used to avoid those costs.`,
       },
       {
         company: "PrepRoute (Udhmodya Foundation, University of Delhi)",
@@ -261,7 +226,7 @@ Streamlined **reporting workflows** and enhanced **data integrity** to support *
       },
       {
         company: "Shivaji College, University of Delhi",
-        href: "https://www.shivajicollege.ac.in/",
+        href: "https://shivaji.du.ac.in/",
         location: "New Delhi",
         title: "Administrative Intern",
         logoUrl: "/shivaji logo.png",
@@ -314,7 +279,7 @@ Processed and managed **documentation** related to **admissions, recruitment and
     },
     {
       school: "Shivaji College, University of Delhi",
-      href: "https://www.shivajicollege.ac.in/",
+      href: "https://shivaji.du.ac.in/",
       degree: "Bachelor of Science (B.Sc) in Computer Science",
       logoUrl: "/shivaji logo.png",
       start: "2022",
